@@ -3,6 +3,8 @@
 
 This is a proof of concept, tested so far on a very limited number of devices (6000 and 7210 wireless controllers on ArubaOS 6.3 and 6.4; and S1500 and S2500 switches on ArubaOS 7.1 and 7.2) with a very specific configuration (i.e. mine!) 
 
+Adapt for cluster.
+
 Install `aruba.pm` into your Perl module directory – in my Scientific Linux install it's at `/usr/share/perl5/vendor_perl/rancid/`.
 
 There is no need for a separate login script. The included `clogin` works fine, as long as you remember to disable paging manually at login. Here is suggested content for your `/etc/rancid/rancid.types.conf` file; note I'm disabling encryption of certain passwords in the output. This may not be desirable for all.
