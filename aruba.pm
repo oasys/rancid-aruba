@@ -169,7 +169,7 @@ sub ShowMasterRedundancy {
 			ProcessHistory("COMMENTS","keysort","E1","!Redundancy: Not configured\n") && return(0);
 
 		/^\s+?VRRP Id (\d+) current state is (.*)$/ &&
-			ProcessHistory("COMMENTS","keysort","E1","!Redundancy: Role is $2\n") && 
+			ProcessHistory("COMMENTS","keysort","E1","!Redundancy: Role is $2\n") &&
 		    ProcessHistory("COMMENTS","keysort","E2","!Redundancy: VRRP ID $1\n") && next;
 
 		/^\s+?Peer's IP Address is (.+)$/ &&
@@ -200,12 +200,12 @@ sub ShowInterfaceTransceivers {
 		next if (/^-+$/);
 		next if (/^Transceiver information not present$/);
 
-		/^([A-Z0-9\/]+)$/ && 
+		/^([A-Z0-9\/]+)$/ &&
 			($int && ProcessHistory("COMMENTS","keysort","F1","!Transceiver: $int: $mfg $pn (serial $sn) $typ\n")) &&
 			($int = $1) && next;
 		/^Vendor Name\s+:\s+(.*)$/ &&
 			($mfg = $1) && next;
-		/^Vendor Serial Number\s+:\s+(.*)$/ && 
+		/^Vendor Serial Number\s+:\s+(.*)$/ &&
 			($sn = $1) && next;
 		/^Vendor Part Number\s+:\s+(.*)$/ &&
 			($pn = $1) && next;
@@ -353,7 +353,7 @@ sub ParseVLANPorts {
 			}
 		} else {
 			push(@newportlist, $portspec);
-		}   
+		}
 	}
 	return nsort @newportlist;
 }
